@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('users.store'), "method" => "POST", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.users.store'), "method" => "POST", "class" => "form-horizontal"]) !!}
             
                 <div class="row">
                     <div class="col-xs-12 col-md-9">

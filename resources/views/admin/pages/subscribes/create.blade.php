@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('subscribes.store'), "method" => "POST", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.subscribes.store'), "method" => "POST", "class" => "form-horizontal"]) !!}
 
                 <div class="row">
                     <div class="col-xs-12 col-md-9">
@@ -63,7 +63,7 @@
                                             {!! Form::checkbox("action",  null, "checked", ["class" => "table-row-checkbox"]) !!}
 
                                             <div style="float: right;">
-                                                <a href="{{ route('subscribes.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
+                                                <a href="{{ route('admin.subscribes.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
                                                 {!! Form::submit("Опубликовать", ["class" => "btn btn-success"]) !!}
                                             </div>
                                         </div>

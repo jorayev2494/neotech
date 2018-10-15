@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('subscribes.update', $subscribe->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.subscribes.update', $subscribe->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
 
                 {!! Form::hidden("_method", "PUT") !!}
             
@@ -54,7 +54,7 @@
                                             {!! Form::checkbox("action",  null, ($subscribe->action == 1) ? "checked" : "", ["class" => "table-row-checkbox"]) !!}
 
                                             <div style="float: right;">
-                                                <a href="{{ route('subscribes.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
+                                                <a href="{{ route('admin.subscribes.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
                                                 {!! Form::submit("Принят", ["class" => "btn btn-success"]) !!}
                                             </div>
                                         </div>

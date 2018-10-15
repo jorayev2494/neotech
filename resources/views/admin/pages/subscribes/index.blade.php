@@ -39,7 +39,7 @@
 
         <header class="widget-header">
             {{ $title or "aliasess!" }}
-            <a href="{{ route('subscribes.create') }}" class="btn btn-success" style="float: right;">Создать</a>
+            <a href="{{ route('admin.subscribes.create') }}" class="btn btn-success" style="float: right;">Создать</a>
         </header>    
 
         
@@ -73,12 +73,12 @@
                                             <span class="fa fa-pencil"></span>
                                             <span class="hidden-xs hidden-sm hidden-md">
                             
-                                            <a href="{{ route('subscribes.edit', $subscribe->id) }}" style="color: #08ed72 !important;">Edit</a>
+                                            <a href="{{ route('admin.subscribes.edit', $subscribe->id) }}" style="color: #08ed72 !important;">Edit</a>
                                             </span>
                                         </button>
                                         
                                         <div class="btn btn-transparent btn-transparent-danger btn-xs">
-                                            {!! Form::open(["url" => route("subscribes.destroy", $subscribe->id), "method" => "POST"]) !!}
+                                            {!! Form::open(["url" => route("admin.subscribes.destroy", $subscribe->id), "method" => "POST"]) !!}
                                                     {!! Form::hidden("_method", "DELETE") !!}
 
                                                     <span class="fa fa-trash-o"></span>

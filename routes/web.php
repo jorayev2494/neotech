@@ -28,9 +28,9 @@ Route::get("contact", ["uses" => "ContactController@show", "as" => "contact"]);
 Route::post("contact", ["uses" => "ContactController@post", "as" => "contact"]);
 
 
-Route::group(["prefix" => "admin", "middleware" => ["auth", "admin"]], function() {
+Route::group(["prefix" => "admin", "middleware" => ["auth", "admin"], "as" => "admin."], function() {
     // admin/dashboard
-    Route::get("/dashboard", ["uses" => "Admin\IndexController@show", "as" => "admin.dashboard"]);
+    Route::get("/dashboard", ["uses" => "Admin\IndexController@show", "as" => "dashboard"]);
     
     // /admin/users
     Route::resource("users", "Admin\UserController");

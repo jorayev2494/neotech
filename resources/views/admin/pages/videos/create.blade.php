@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('videos.store'), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.videos.store'), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
 
                 <div class="row">
                     <div class="col-xs-12 col-md-9">

@@ -60,6 +60,11 @@ class IndexController extends BasicController
         $this->vars = array_add($this->vars, "videos", $videos);
         // dd($videos);
 
+        /**
+         * Надо найти Автар Пользователя
+         */
+        dd(auth()->user());
+
         return $this->renderOutput();
     }
 

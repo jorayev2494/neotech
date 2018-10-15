@@ -159,6 +159,8 @@
                             </div> 
                         </div>
 
+                        {{-- {{ dd( auth()->user() ) }} --}}
+
                         <nav class="flex-child nav__wrap d-none d-lg-block" style="padding-left: 0px;">              
                             <div style="width: 35px; height: 35px; border-radius: 50%; float: left; margin-right: 10px;">
                                 <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->avatar }}" style="border-radius: 50px; ">
@@ -172,7 +174,9 @@
                                         <li><a href="#">12345 ***</a></li> --}}
                                         
                                         @if (Auth::user()->id == 1)
-                                            <li><a href="{{ route('admin.dashboard') }}">Admin Dashboard</a></li>
+                                            <li>
+                                                <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                                            </li>
                                         @endif
                                         
                                         <li>

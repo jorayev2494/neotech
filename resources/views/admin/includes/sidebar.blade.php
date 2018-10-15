@@ -31,10 +31,12 @@
             {{--  {{ dd(Request::getRequestUri()) }}  --}}
             {{--  {{ (Request::is(route(Route::currentRouteName()) . '/*') == route(Route::currentRouteName())) ? 'active' : '' }}  --}}
             @foreach ($adminMenus as $adminMenu)
+            {{-- {{ dd($adminMenu->link) }} --}}
                 <li class="sidebar-nav-link">
-                    <a href="{{ $adminMenu->link }}">
+                    <a href="{{ route('admin.' . $adminMenu->link . '.index') }}">
                             {{--  {{ dd($adminMenu->icon) }}  --}}
-                        <span class="typcn sidebar-nav-link-logo" style="content: {{ $adminMenu->icon }};"></span>{{ $adminMenu->title }}
+                        <span class="typcn sidebar-nav-link-logo" style="content: {{ $adminMenu->icon }};"></span>
+                        {{ $adminMenu->title }}
                     </a>
                 </li>
             @endforeach

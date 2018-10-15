@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('aliases.update', $alias->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.aliases.update', $alias->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
 
                 {!! Form::hidden("_method", "PUT") !!}
             

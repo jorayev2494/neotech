@@ -4,7 +4,7 @@
 
             @include(env("ADMIN") . '.includes.errors')
             
-            {!! Form::open(["url" => route('groups.update', $group->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
+            {!! Form::open(["url" => route('admin.groups.update', $group->id), "method" => "POST", "enctype" => "multipart/form-data", "class" => "form-horizontal"]) !!}
 
                 {!! Form::hidden("_method", "PUT") !!}
             
@@ -29,31 +29,13 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group">
-                                    <label class="col-sm-2 col-xs-12 control-label">Photo</label>
-                                    <div class="col-sm-10 col-xs-12">
-
-                                        {!! Form::file("image", ["class" => "form-control"]) !!}
-
-                                    </div>
-                                </div> --}}
-
-                                {{-- <div class="form-group">
-                                    <label class="col-sm-2 col-xs-12 control-label">Body</label>
-                                    <div class="col-sm-10 col-xs-12">
-
-                                        {!! Form::textarea("body", $group->body, ["class" => "form-control"]) !!}
-
-                                    </div>
-                                </div> --}}
-
                                 <div class="form-group">
                                     <label class="col-sm-2 col-xs-12 control-label">Action</label>
                                         <div class="col-sm-10 col-xs-12">
                                             {!! Form::checkbox("action",  null, ($group->action == 1) ? "checked" : "", ["class" => "table-row-checkbox"]) !!}
 
                                             <div style="float: right;">
-                                                <a href="{{ route('groups.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
+                                                <a href="{{ route('admin.groups.index') }}" class="btn btn-transparent"><span class="fa fa-arrow-left"></span> Cancel</a>
                                                 {!! Form::submit("Опубликовать", ["class" => "btn btn-success"]) !!}
                                             </div>
                                         </div>

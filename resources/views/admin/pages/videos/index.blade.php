@@ -35,7 +35,7 @@
 
         <header class="widget-header">
             {{ $title or "aliasess!" }}
-            <a href="{{ route('videos.create') }}" class="btn btn-success" style="float: right;">Создать</a>
+            <a href="{{ route('admin.videos.create') }}" class="btn btn-success" style="float: right;">Создать</a>
         </header>    
 
         
@@ -72,7 +72,9 @@
                                         <video src="{{ asset(env('THEME')) }}/video/post/{{ $alias->video }}" class="video-playlist__content-video" controls="" autoplay="" muted="" style="width: 75px;"></video>
                                     </td>
 
-                                    <td><img src="{{ asset(env('THEME')) }}/img/blog/{{ $alias->img }}" alt="{{ $alias->img }}" style="width: 55px;"></td>
+                                    <td>
+                                        <img src="{{ asset(env('THEME')) }}/img/blog/{{ $alias->img }}" alt="{{ $alias->img }}" style="width: 55px;">
+                                    </td>
                                     <td>{{ str_limit($alias->body, 70) }}</td>
                                     
                                     <td style="{{ ($alias->action) ? 'color: #06BC5A;' : 'color: red;' }} text-align: center;">{{ $alias->action }}</td>
@@ -84,12 +86,12 @@
                                             <span class="fa fa-pencil"></span>
                                             <span class="hidden-xs hidden-sm hidden-md">
                             
-                                            <a href="{{ route('videos.edit', $alias->id) }}" style="color: #08ed72 !important;">Edit</a>
+                                            <a href="{{ route('admin.videos.edit', $alias->id) }}" style="color: #08ed72 !important;">Edit</a>
                                             </span>
                                         </button>
                                         
                                         <div class="btn btn-transparent btn-transparent-danger btn-xs">
-                                            {!! Form::open(["url" => route("videos.destroy", $alias->id), "method" => "POST"]) !!}
+                                            {!! Form::open(["url" => route("admin.videos.destroy", $alias->id), "method" => "POST"]) !!}
                                                     {!! Form::hidden("_method", "DELETE") !!}
 
                                                     <span class="fa fa-trash-o"></span>

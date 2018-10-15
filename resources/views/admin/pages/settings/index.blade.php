@@ -39,7 +39,7 @@
 
         <header class="widget-header">
             {{ $title or "aliasess!" }}
-            <a href="{{ route('settings.create') }}" class="btn btn-success" style="float: right;">Создать</a>
+            <a href="{{ route('admin.settings.create') }}" class="btn btn-success" style="float: right;">Создать</a>
         </header>    
 
         <style>
@@ -86,7 +86,7 @@
                             {{-- {{ $settings["logo"] }} --}}
 
                             
-                            {!! Form::open([route('settings.store'), "method" => "POST", "enctype" => "multipart/form-data"]) !!}
+                            {!! Form::open([route('admin.settings.store'), "method" => "POST", "enctype" => "multipart/form-data"]) !!}
                             
                                 <div class="row show-grid">
                                     <div class="col-xs-12 col-sm-6 col-md-7">Update Logo site</div>

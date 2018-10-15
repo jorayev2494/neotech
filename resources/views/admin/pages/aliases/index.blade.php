@@ -39,7 +39,7 @@
 
         <header class="widget-header">
             {{ $title or "aliasess!" }}
-            <a href="{{ route('aliases.create') }}" class="btn btn-success" style="float: right;">Создать</a>
+            <a href="{{ route('admin.aliases.create') }}" class="btn btn-success" style="float: right;">Создать</a>
         </header>    
 
         
@@ -85,12 +85,12 @@
                                             <span class="fa fa-pencil"></span>
                                             <span class="hidden-xs hidden-sm hidden-md">
                             
-                                            <a href="{{ route('aliases.edit', $alias->id) }}" style="color: #08ed72 !important;">Edit</a>
+                                            <a href="{{ route('admin.aliases.edit', $alias->id) }}" style="color: #08ed72 !important;">Edit</a>
                                             </span>
                                         </button>
                                         
                                         <div class="btn btn-transparent btn-transparent-danger btn-xs">
-                                            {!! Form::open(["url" => route("aliases.destroy", $alias->id), "method" => "POST"]) !!}
+                                            {!! Form::open(["url" => route("admin.aliases.destroy", $alias->id), "method" => "POST"]) !!}
                                                     {!! Form::hidden("_method", "DELETE") !!}
 
                                                     <span class="fa fa-trash-o"></span>
